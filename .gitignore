@@ -1,0 +1,18 @@
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Fichiers d'environnement
+.env
+
+# Dépendances
+/vendor/
+/node_modules/
+
+# Fichiers de configuration IDE
+.idea/
+.vscode/
+
+# Fichiers de cache
+*.cache
+*.log

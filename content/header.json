@@ -1,0 +1,22 @@
+{
+    "site_title": "AnderCMS",
+    "logo_url": "\/assets\/images\/logo.png",
+    "menu_items": [
+        {
+            "title": "Accueil",
+            "url": "\/"
+        },
+        {
+            "title": "Menu",
+            "url": "\/menu"
+        },
+        {
+            "title": "Contact",
+            "url": "\/contact"
+        },
+        {
+            "title": "Admin",
+            "url": "\/admin"
+        }
+    ]
+}

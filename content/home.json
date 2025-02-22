@@ -1,0 +1,10 @@
+{
+    "seo": {
+        "title": "Restaurant Gastronomique | Cuisine raffinée au cœur de Paris",
+        "description": "Restaurant gastronomique proposant une cuisine française raffinée dans un cadre élégant. Produits frais et locaux, carte des vins exceptionnelle."
+    },
+    "subheader_image": "http://localhost:8000/assets/images/test.jpg",
+    "title": "Bienvenue dans notre restaurant",
+    "content": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh viverra non semper suscipit posuere a pede.\r\n\r\nDonec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.\r\n\r\nMorbi in sem quis dui placerat ornare. Pellentesque odio nisi euismod in pharetra a ultricies in diam. Sed arcu. Cras consequat.\r\n\r\nPraesent dapibus neque id cursus faucibus tortor neque egestas auguae eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi tincidunt quis accumsan porttitor facilisis luctus metus.\r\n\r\nmalesuada erat ut turpis. Suspendisse urna nibh viverra non semper suscipit posuere a pede.\r\n\r\nDonec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.\r\n\r\nMorbi in sem quis dui placerat ornare. Pellentesque odio nisi euismod in pharetra a ultricies in diam. Sed arcu. Cras consequat.\r\n\r\nPraesent dapibus neque id cursus faucibus tortor neque egestas auguae eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi tincidunt quis accumsan porttitor facilisis luctus metus.",
+    "cta": "link 2"
+}

@@ -1,0 +1,32 @@
+{
+    "seo": {
+        "title": "Contact | Restaurant Gastronomique",
+        "description": "Contactez-nous pour réserver une table ou pour toute information. Restaurant situé au cœur de Paris, ouvert du mardi au dimanche."
+    },
+    "title": "Contactez-nous",
+    "description": "N'hésitez pas à nous contacter pour toute question ou réservation",
+    "address": {
+        "street": "123 rue de la Paix",
+        "city": "75000 Paris",
+        "country": "France"
+    },
+    "contact": {
+        "phone": "01 23 45 67 89",
+        "email": "contact@restaurant.fr"
+    },
+    "hours": {
+        "weekdays": "12h00 - 14h30 | 19h00 - 22h30",
+        "weekends": "12h00 - 15h00 | 19h00 - 23h00",
+        "closed": "Lundi"
+    },
+    "map": {
+        "latitude": "48.8566",
+        "longitude": "2.3522",
+        "zoom": "15"
+    },
+    "social": {
+        "facebook": "https://facebook.com/restaurant",
+        "instagram": "https://instagram.com/restaurant",
+        "twitter": "https://twitter.com/restaurant"
+    }
+} 
