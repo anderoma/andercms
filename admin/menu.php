@@ -84,9 +84,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <div class="flex items-center space-x-4 p-3 border rounded" data-id="<?php echo $item['id']; ?>">
                         <i class="fas fa-grip-vertical cursor-move text-gray-400"></i>
                         <input type="text" value="<?php echo htmlspecialchars($item['title']); ?>"
-                            class="flex-1 p-2 border rounded" placeholder="Titre">
+                            class="w-full px-4 py-2 rounded-lg border border-gray-300" placeholder="Titre">
                         <input type="text" value="<?php echo htmlspecialchars($item['url']); ?>"
-                            class="flex-1 p-2 border rounded" placeholder="URL">
+                            class="w-full px-4 py-2 rounded-lg border border-gray-300" placeholder="URL">
                         <button onclick="deleteMenuItem('<?php echo $item['id']; ?>')"
                             class="text-red-500 hover:text-red-700">
                             <i class="fas fa-trash"></i>
@@ -105,16 +105,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <div>
                         <label class="block text-sm font-medium mb-2">Titre</label>
                         <input type="text" name="title" required
-                            class="w-full p-2 border rounded">
+                            class="w-full px-4 py-2 rounded-lg border border-gray-300">
                     </div>
                     <div>
                         <label class="block text-sm font-medium mb-2">URL</label>
                         <input type="text" name="url" required
-                            class="w-full p-2 border rounded">
+                            class="w-full px-4 py-2 rounded-lg border border-gray-300">
                     </div>
                 </div>
                 <button type="submit"
-                    class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                    class="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 rounded-lg transition-colors">
                     Ajouter
                 </button>
             </form>

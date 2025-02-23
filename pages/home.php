@@ -5,38 +5,96 @@ include BLOCKS_PATH . '/header.php';
 $homeContent = json_decode(file_get_contents(CONTENT_PATH . '/home.json'), true);
 ?>
 
-<!-- Jumbotron -->
-<div class="relative bg-cover bg-no-repeat bg-center p-12 text-center" style="background-image: url('<?php echo $homeContent['subheader_image']; ?>'); height: 700px;">
-    <div class="absolute inset-0 flex items-center justify-center">
-        <div class="text-white text-center">
-            <h2 class="text-5xl font-bold mb-4">Heading</h2>
-            <h4 class="text-2xl font-semibold mb-6">Subheading</h4>
-            <button type="button" class="bg-white text-gray-800 font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-gray-100 transition duration-300 ease-in-out">
-                En Savoir plus
-            </button>
+<!-- Hero Section -->
+<header class="relative h-screen w-full">
+    <div class="absolute inset-0 bg-black/50">
+        <img src="<?php echo $homeContent['hero_image']; ?>" alt="Hero background" class="w-full h-full object-cover -z-10">
+    </div>
+    <div class="container mx-auto px-4 h-full flex items-center justify-center text-center">
+        <div class="max-w-4xl">
+            <h1 class="text-5xl md:text-6xl font-bold text-white mb-6"><?php echo $homeContent['hero_title']; ?></h1>
+            <p class="text-xl text-white mb-8"><?php echo $homeContent['hero_subtitle']; ?></p>
+            <a href="#reservation" class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8 py-4 rounded-full transition-colors"><?php echo $homeContent['hero_cta']; ?></a>
         </div>
     </div>
-</div>
-<!-- Jumbotron -->
+</header>
 
-<div class="container mx-auto p-4 my-10">
-    <h1><?php echo $homeContent['title']; ?></h1>
-    <p><?php echo $homeContent['content']; ?></p>
-</div>
+<!-- Section Menu -->
+<section id="menu" class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-12"><?php echo $homeContent['menu_title']; ?></h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <?php foreach($homeContent['menu_items'] as $item): ?>
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <img src="<?php echo $item['image']; ?>" alt="<?php echo $item['title']; ?>" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2"><?php echo $item['title']; ?></h3>
+                    <p class="text-gray-600"><?php echo $item['description']; ?></p>
+                </div>
+            </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</section>
 
-<section class="bg-white dark:bg-gray-900">
-    <div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
-        <img class="w-full dark:hidden" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup.svg" alt="dashboard image">
-        <img class="w-full hidden dark:block" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup-dark.svg" alt="dashboard image">
-        <div class="mt-4 md:mt-0">
-            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Let's create more tools and ideas that brings us together.</h2>
-            <p class="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">Flowbite helps you connect with friends and communities of people who share your interests. Connecting with your friends and family as well as discovering new ones is easy with features like Groups.</p>
-            <a href="#" class="inline-flex items-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900">
-                Get started
-                <svg class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                </svg>
-            </a>
+<!-- Section À propos -->
+<section id="about" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-4xl font-bold mb-6"><?php echo $homeContent['about_title']; ?></h2>
+                <p class="text-gray-600 text-lg"><?php echo $homeContent['about_content']; ?></p>
+            </div>
+            <div class="rounded-lg overflow-hidden shadow-lg">
+                <img src="<?php echo $homeContent['about_image']; ?>" alt="Notre restaurant" class="w-full h-full object-cover">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section Contact et Réservation -->
+<section id="contact" class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div class="bg-gray-50 p-8 rounded-lg">
+                <h2 class="text-3xl font-bold mb-6"><?php echo $homeContent['contact_title']; ?></h2>
+                <div class="space-y-4 text-gray-600">
+                    <p><?php echo $homeContent['address']; ?></p>
+                    <p><?php echo $homeContent['phone']; ?></p>
+                    <p><?php echo $homeContent['email']; ?></p>
+                </div>
+            </div>
+            <div class="bg-gray-50 p-8 rounded-lg">
+                <h2 class="text-3xl font-bold mb-6"><?php echo $homeContent['reservation_title']; ?></h2>
+                <form id="reservation" action="<?php echo $homeContent['reservation_action']; ?>" method="POST" class="space-y-4">
+                    <div>
+                        <input type="text" placeholder="<?php echo $homeContent['form_name']; ?>" required 
+                            class="w-full px-4 py-2 rounded-lg border border-gray-300">
+                    </div>
+                    <div>
+                        <input type="email" placeholder="<?php echo $homeContent['form_email']; ?>" required 
+                            class="w-full px-4 py-2 rounded-lg border border-gray-300">
+                    </div>
+                    <div>
+                        <input type="tel" placeholder="<?php echo $homeContent['form_phone']; ?>" required 
+                            class="w-full px-4 py-2 rounded-lg border border-gray-300">
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <input type="date" required 
+                            class="w-full px-4 py-2 rounded-lg border border-gray-300">
+                        <input type="time" required 
+                            class="w-full px-4 py-2 rounded-lg border border-gray-300">
+                    </div>
+                    <div>
+                        <input type="number" placeholder="<?php echo $homeContent['form_guests']; ?>" min="1" max="10" required 
+                            class="w-full px-4 py-2 rounded-lg border border-gray-300">
+                    </div>
+                    <button type="submit" 
+                        class="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 rounded-lg transition-colors">
+                        <?php echo $homeContent['form_submit']; ?>
+                    </button>
+                </form>
+            </div>
         </div>
     </div>
 </section>

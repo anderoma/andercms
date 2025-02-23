@@ -29,6 +29,31 @@
                         Utilisez le menu à gauche pour accéder à l'accueil ou à la médiathèque.
                     </p>
                 </div>
+                <div class="bg-white shadow-md rounded-lg p-6 mb-6">
+                    <h2 class="text-xl font-semibold mb-4">Outils SEO</h2>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <h3 class="font-medium">Sitemap XML</h3>
+                                <p class="text-sm text-gray-600">Générer le fichier sitemap.xml pour les moteurs de recherche</p>
+                            </div>
+                            <form action="generate_sitemap.php" method="POST">
+                                <button type="submit" 
+                                    class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded-lg transition-colors">
+                                    Générer le sitemap
+                                </button>
+                            </form>
+                        </div>
+                        <?php if (file_exists(__DIR__ . '/../public/sitemap.xml')): ?>
+                        <div class="text-sm text-gray-600">
+                            Dernier sitemap généré le : <?php echo date('d/m/Y H:i', filemtime(__DIR__ . '/../public/sitemap.xml')); ?>
+                            <a href="/sitemap.xml" target="_blank" class="text-blue-500 hover:text-blue-700 ml-2">
+                                Voir le sitemap
+                            </a>
+                        </div>
+                        <?php endif; ?>
+                    </div>
+                </div>
             </main>
         </div>
     </div>

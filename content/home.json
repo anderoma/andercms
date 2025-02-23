@@ -6,5 +6,63 @@
     "subheader_image": "http://localhost:8000/assets/images/test.jpg",
     "title": "Bienvenue dans notre restaurant",
     "content": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh viverra non semper suscipit posuere a pede.\r\n\r\nDonec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.\r\n\r\nMorbi in sem quis dui placerat ornare. Pellentesque odio nisi euismod in pharetra a ultricies in diam. Sed arcu. Cras consequat.\r\n\r\nPraesent dapibus neque id cursus faucibus tortor neque egestas auguae eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi tincidunt quis accumsan porttitor facilisis luctus metus.\r\n\r\nmalesuada erat ut turpis. Suspendisse urna nibh viverra non semper suscipit posuere a pede.\r\n\r\nDonec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.\r\n\r\nMorbi in sem quis dui placerat ornare. Pellentesque odio nisi euismod in pharetra a ultricies in diam. Sed arcu. Cras consequat.\r\n\r\nPraesent dapibus neque id cursus faucibus tortor neque egestas auguae eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi tincidunt quis accumsan porttitor facilisis luctus metus.",
-    "cta": "link 2"
+    "cta": "link 2",
+    "hero_image": "https://placehold.co/1920x1080/2c3e50/ffffff/png?text=Restaurant+Le+Gourmet",
+    "hero_title": "Une Expérience Gastronomique Unique",
+    "hero_subtitle": "Découvrez une cuisine raffinée et créative dans un cadre élégant au cœur de Paris",
+    "hero_cta": "Réserver une table",
+    "menu_title": "Notre Carte",
+    "menu_items": [
+        {
+            "title": "Le Homard Bleu",
+            "description": "Homard breton, bisque crémeuse, légumes de saison confits et émulsion aux herbes fraîches",
+            "image": "https://placehold.co/800x600/34495e/ffffff/png?text=Homard+Bleu"
+        },
+        {
+            "title": "Le Bœuf Wagyu",
+            "description": "Filet de bœuf Wagyu grade A5, purée de pommes de terre truffée, jus corsé au vin rouge",
+            "image": "https://placehold.co/800x600/2c3e50/ffffff/png?text=Boeuf+Wagyu"
+        },
+        {
+            "title": "Le Foie Gras Maison",
+            "description": "Foie gras de canard mi-cuit, chutney de figues et pain brioché toasté",
+            "image": "https://placehold.co/800x600/34495e/ffffff/png?text=Foie+Gras"
+        },
+        {
+            "title": "Le Saint-Jacques",
+            "description": "Noix de Saint-Jacques snackées, risotto aux champignons sauvages et émulsion au parmesan",
+            "image": "https://placehold.co/800x600/2c3e50/ffffff/png?text=Saint-Jacques"
+        },
+        {
+            "title": "L'Agneau des Prés-Salés",
+            "description": "Carré d'agneau rôti, déclinaison de carottes et jus aux épices douces",
+            "image": "https://placehold.co/800x600/34495e/ffffff/png?text=Agneau"
+        },
+        {
+            "title": "Le Soufflé au Chocolat",
+            "description": "Soufflé au chocolat grand cru Valrhona, glace vanille bourbon de Madagascar",
+            "image": "https://placehold.co/800x600/2c3e50/ffffff/png?text=Souffle+Chocolat"
+        }
+    ],
+    "about_title": "Notre Histoire",
+    "about_content": "Depuis 2010, Le Gourmet vous accueille dans un cadre raffiné au cœur du Marais. Notre Chef étoilé Jean-Pierre Dubois et sa brigade perpétuent l'excellence de la gastronomie française tout en y apportant une touche de modernité. Nous sélectionnons avec soin les meilleurs produits auprès de producteurs locaux passionnés pour vous offrir une expérience culinaire inoubliable.",
+    "about_image": "https://placehold.co/1200x800/2c3e50/ffffff/png?text=Notre+Restaurant",
+    "contact_title": "Nous Contacter",
+    "address": "12 rue de la Gastronomie<br>75003 Paris",
+    "phone": "Tél : 01 23 45 67 89",
+    "email": "contact@legourmet.fr",
+    "reservation_title": "Réserver une Table",
+    "reservation_action": "/api/reservations",
+    "form_name": "Votre nom",
+    "form_email": "Votre email",
+    "form_phone": "Votre téléphone",
+    "form_guests": "Nombre de convives",
+    "form_submit": "Confirmer la réservation",
+    "opening_hours": {
+        "lunch": "12h00 - 14h30",
+        "dinner": "19h00 - 22h30",
+        "days": "Du mardi au samedi",
+        "sunday": "Dimanche : Service du midi uniquement (12h00 - 15h00)",
+        "closed": "Fermé le lundi"
+    }
 }
