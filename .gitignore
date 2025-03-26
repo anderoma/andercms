@@ -16,3 +16,6 @@ Thumbs.db
 # Fichiers de cache
 *.cache
 *.log
+
+# Fichier Sitemap
+sitemap.xml
