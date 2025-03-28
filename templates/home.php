@@ -1,7 +1,5 @@
 <?php
 //include __DIR__ . '/../config.php';
-
-include BLOCKS_PATH . '/header.php';
 $homeContent = json_decode(file_get_contents(CONTENT_PATH . '/home.json'), true);
 ?>
 
@@ -24,14 +22,14 @@ $homeContent = json_decode(file_get_contents(CONTENT_PATH . '/home.json'), true)
     <div class="container mx-auto px-4">
         <h2 class="text-4xl font-bold text-center mb-12"><?php echo $homeContent['menu_title']; ?></h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <?php foreach($homeContent['menu_items'] as $item): ?>
-            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                <img src="<?php echo $item['image']; ?>" alt="<?php echo $item['title']; ?>" class="w-full h-64 object-cover">
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold mb-2"><?php echo $item['title']; ?></h3>
-                    <p class="text-gray-600"><?php echo $item['description']; ?></p>
+            <?php foreach ($homeContent['menu_items'] as $item): ?>
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="<?php echo $item['image']; ?>" alt="<?php echo $item['title']; ?>" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2"><?php echo $item['title']; ?></h3>
+                        <p class="text-gray-600"><?php echo $item['description']; ?></p>
+                    </div>
                 </div>
-            </div>
             <?php endforeach; ?>
         </div>
     </div>
@@ -68,28 +66,28 @@ $homeContent = json_decode(file_get_contents(CONTENT_PATH . '/home.json'), true)
                 <h2 class="text-3xl font-bold mb-6"><?php echo $homeContent['reservation_title']; ?></h2>
                 <form id="reservation" action="<?php echo $homeContent['reservation_action']; ?>" method="POST" class="space-y-4">
                     <div>
-                        <input type="text" placeholder="<?php echo $homeContent['form_name']; ?>" required 
+                        <input type="text" placeholder="<?php echo $homeContent['form_name']; ?>" required
                             class="w-full px-4 py-2 rounded-lg border border-gray-300">
                     </div>
                     <div>
-                        <input type="email" placeholder="<?php echo $homeContent['form_email']; ?>" required 
+                        <input type="email" placeholder="<?php echo $homeContent['form_email']; ?>" required
                             class="w-full px-4 py-2 rounded-lg border border-gray-300">
                     </div>
                     <div>
-                        <input type="tel" placeholder="<?php echo $homeContent['form_phone']; ?>" required 
+                        <input type="tel" placeholder="<?php echo $homeContent['form_phone']; ?>" required
                             class="w-full px-4 py-2 rounded-lg border border-gray-300">
                     </div>
                     <div class="grid grid-cols-2 gap-4">
-                        <input type="date" required 
+                        <input type="date" required
                             class="w-full px-4 py-2 rounded-lg border border-gray-300">
-                        <input type="time" required 
+                        <input type="time" required
                             class="w-full px-4 py-2 rounded-lg border border-gray-300">
                     </div>
                     <div>
-                        <input type="number" placeholder="<?php echo $homeContent['form_guests']; ?>" min="1" max="10" required 
+                        <input type="number" placeholder="<?php echo $homeContent['form_guests']; ?>" min="1" max="10" required
                             class="w-full px-4 py-2 rounded-lg border border-gray-300">
                     </div>
-                    <button type="submit" 
+                    <button type="submit"
                         class="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 rounded-lg transition-colors">
                         <?php echo $homeContent['form_submit']; ?>
                     </button>
@@ -98,5 +96,3 @@ $homeContent = json_decode(file_get_contents(CONTENT_PATH . '/home.json'), true)
         </div>
     </div>
 </section>
-
-<?php include BLOCKS_PATH . '/footer.php'; ?>

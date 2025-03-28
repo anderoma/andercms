@@ -15,6 +15,12 @@ if (!file_exists($jsonFile)) {
 // Charger les données JSON
 $pageData = json_decode(file_get_contents($jsonFile), true);
 
+// Charger le template approprié
+$templateFile = TEMPLATES_PATH . '/' . $pageName . '.php';
+if (!file_exists($templateFile)) {
+    die('Template non trouvé');
+}
+
 // Traitement du formulaire
 if (!empty($_POST)) {
     $pageData = updateData($pageData, $_POST);
@@ -64,49 +70,7 @@ if (!empty($_POST)) {
 
                     <!-- Interface d'édition visuelle -->
                     <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                        <!-- Hero Section -->
-                        <div class="relative h-[400px] group">
-                            <img src="<?php echo $pageData['hero_image']; ?>"
-                                class="w-full h-full object-cover"
-                                alt="Hero background">
-                            <div class="absolute inset-0 bg-black/50 flex items-center justify-center">
-                                <div class="text-center text-white space-y-4 p-8">
-                                    <div class="editable-field" data-field="hero_title">
-                                        <h1 class="text-5xl font-bold mb-4"><?php echo $pageData['hero_title']; ?></h1>
-                                        <button class="edit-btn hidden group-hover:block">
-                                            <i class="fas fa-edit"></i>
-                                        </button>
-                                    </div>
-                                    <div class="editable-field" data-field="hero_subtitle">
-                                        <p class="text-xl"><?php echo $pageData['hero_subtitle']; ?></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Menu Section -->
-                        <div class="p-8">
-                            <h2 class="text-3xl font-bold mb-6">Notre Menu</h2>
-                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                                <?php foreach ($pageData['menu_items'] as $index => $item): ?>
-                                    <div class="menu-item group relative">
-                                        <img src="<?php echo $item['image']; ?>"
-                                            class="w-full h-64 object-cover rounded-lg"
-                                            alt="<?php echo $item['title']; ?>">
-                                        <div class="p-4">
-                                            <div class="editable-field" data-field="menu_items[<?php echo $index; ?>][title]">
-                                                <h3 class="text-xl font-semibold"><?php echo $item['title']; ?></h3>
-                                            </div>
-                                            <div class="editable-field" data-field="menu_items[<?php echo $index; ?>][description]">
-                                                <p class="text-gray-600"><?php echo $item['description']; ?></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                <?php endforeach; ?>
-                            </div>
-                        </div>
-
-                        <!-- Autres sections... -->
+                        <?php include $templateFile; ?>
                     </div>
                 </div>
             </main>

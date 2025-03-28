@@ -37,15 +37,19 @@ if (is_dir($contentDir)) {
             $pageName = pathinfo($file, PATHINFO_FILENAME);
 
             // Ajouter à la liste des pages disponibles
-            $availablePages[$pageName] = '/pages/' . $pageName . '.php';
+            $availablePages[$pageName] = '/templates/' . $pageName . '.php';
         }
     }
 }
 
 // Vérifier si la page demandée existe, sinon rediriger vers une page 404
 if (array_key_exists($page, $availablePages)) {
+    include BLOCKS_PATH . '/header.php';
     include __DIR__ . $availablePages[$page]; // Inclure la page correspondante
+    include BLOCKS_PATH . '/footer.php';
 } else {
     // Si la page n'existe pas, afficher une page 404
-    include 'pages/404.php';
+    include BLOCKS_PATH . '/header.php';
+    include 'templates/404.php';
+    include BLOCKS_PATH . '/footer.php';
 }

@@ -1,6 +1,5 @@
 <?php
 //include __DIR__ . '/../config.php';
-include BLOCKS_PATH . '/header.php';
 
 // Charger les données de contact
 $contactFile = CONTENT_PATH . '/contact.json';
@@ -100,5 +99,3 @@ $contactData = json_decode(file_get_contents($contactFile), true);
         </div>
     </div>
 </div>
-
-<?php include BLOCKS_PATH . '/footer.php'; ?>

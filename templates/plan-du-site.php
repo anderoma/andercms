@@ -1,6 +1,4 @@
 <?php
-include BLOCKS_PATH . '/header.php';
-
 // Générer dynamiquement les pages disponibles à partir des fichiers JSON du dossier content
 $pages = [];
 $contentDir = __DIR__ . '/../content';
@@ -76,5 +74,3 @@ if (is_dir($contentDir)) {
     <?php endif; ?>
   </div>
 </div>
-
-<?php include BLOCKS_PATH . '/footer.php'; ?>

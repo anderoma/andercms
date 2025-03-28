@@ -1,7 +1,6 @@
 <?php
-// Page 404 - Page non trouvée
-
-include BLOCKS_PATH . '/header.php'; ?>
+// Page 404 - Page non trouvée 
+?>
 
 <div class="flex items-center justify-center bg-gray-100">
     <div class="text-center my-75">
@@ -12,5 +11,3 @@ include BLOCKS_PATH . '/header.php'; ?>
         </a>
     </div>
 </div>
-
-<?php include BLOCKS_PATH . '/footer.php'; ?>

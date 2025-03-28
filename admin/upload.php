@@ -16,11 +16,55 @@ if (isset($_FILES['file'])) {
     $fileName = basename($file['name']);
     $targetFile = $uploadDir . $fileName;
 
-    // Vérifier si le fichier est valide
-    if (move_uploaded_file($file['tmp_name'], $targetFile)) {
-        $successMessage = "Fichier téléchargé avec succès.";
-    } else {
-        $errorMessage = "Erreur lors du téléchargement.";
+    // Vérifications de sécurité
+    $allowedTypes = ['image/jpeg', 'image/png', 'image/jpg'];
+    $maxFileSize = 5 * 1024 * 1024; // 5MB
+
+    // Vérifier les erreurs
+    // Vérifier les erreurs
+    if ($file['error'] !== UPLOAD_ERR_OK) {
+        switch ($file['error']) {
+            case UPLOAD_ERR_INI_SIZE:
+                $errorMessage = "Le fichier dépasse la taille maximale autorisée par PHP.";
+                break;
+            case UPLOAD_ERR_FORM_SIZE:
+                $errorMessage = "Le fichier dépasse la taille maximale autorisée par le formulaire.";
+                break;
+            case UPLOAD_ERR_PARTIAL:
+                $errorMessage = "Le fichier n'a été que partiellement téléchargé.";
+                break;
+            case UPLOAD_ERR_NO_FILE:
+                $errorMessage = "Aucun fichier n'a été téléchargé.";
+                break;
+            case UPLOAD_ERR_NO_TMP_DIR:
+                $errorMessage = "Dossier temporaire manquant.";
+                break;
+            case UPLOAD_ERR_CANT_WRITE:
+                $errorMessage = "Échec de l'écriture du fichier sur le disque.";
+                break;
+            default:
+                $errorMessage = "Erreur de téléchargement (code: " . $file['error'] . ")";
+        }
+        // Ajouter des informations de débogage
+        error_log("Erreur upload - Code: " . $file['error'] . " - Fichier: " . $file['name']);
+    }
+    // Vérifier le type de fichier
+    elseif (!in_array($file['type'], $allowedTypes)) {
+        $errorMessage = "Type de fichier non autorisé. Seules les images JPG et PNG sont acceptées.";
+    }
+    // Vérifier la taille du fichier
+    elseif ($file['size'] > $maxFileSize) {
+        $errorMessage = "Le fichier est trop volumineux (max 5MB).";
+    }
+    // Tenter le téléchargement
+    else {
+        if (move_uploaded_file($file['tmp_name'], $targetFile)) {
+            // Définir les permissions du fichier
+            chmod($targetFile, 0644);
+            $successMessage = "Fichier téléchargé avec succès.";
+        } else {
+            $errorMessage = "Erreur lors du téléchargement. Vérifiez les permissions du dossier.";
+        }
     }
 }
 
@@ -94,7 +138,7 @@ $files = array_diff(scandir($uploadDir), ['.', '..']);
             <main class="flex-1 p-6">
                 <div class="bg-white rounded-lg shadow p-6 mb-6">
                     <h2 class="text-xl font-semibold text-gray-800 mb-4">Médiathèque</h2>
-                    
+
                     <!-- Notifications -->
                     <?php if (isset($successMessage)): ?>
                         <div class="bg-green-500 text-white p-4 mb-4 rounded-lg">
@@ -120,11 +164,11 @@ $files = array_diff(scandir($uploadDir), ['.', '..']);
                                 $filePath = $uploadDir . $file;
                                 $fileExtension = strtolower(pathinfo($filePath, PATHINFO_EXTENSION));
                                 if ($fileExtension === 'jpg' || $fileExtension === 'jpeg' || $fileExtension === 'png'): ?>
-                                    <img src="/assets/images/<?php echo $file; ?>" 
-                                         alt="<?php echo $file; ?>" 
-                                         class="w-full h-auto object-cover rounded-lg image-thumbnail cursor-pointer" 
-                                         data-src="/assets/images/<?php echo $file; ?>" 
-                                         data-name="<?php echo $file; ?>">
+                                    <img src="/assets/images/<?php echo $file; ?>"
+                                        alt="<?php echo $file; ?>"
+                                        class="w-full h-auto object-cover rounded-lg image-thumbnail cursor-pointer"
+                                        data-src="/assets/images/<?php echo $file; ?>"
+                                        data-name="<?php echo $file; ?>">
                                 <?php endif; ?>
                             </div>
                         <?php endforeach; ?>

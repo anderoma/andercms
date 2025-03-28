@@ -1,6 +1,5 @@
 <?php
 //include __DIR__ . '/../config.php';
-include BLOCKS_PATH . '/header.php';
 
 // Charger les données du menu
 $menuFile = CONTENT_PATH . '/menu.json';
@@ -46,5 +45,3 @@ $menuData = json_decode(file_get_contents($menuFile), true);
         <?php endforeach; ?>
     </div>
 </div>
-
-<?php include BLOCKS_PATH . '/footer.php'; ?>
